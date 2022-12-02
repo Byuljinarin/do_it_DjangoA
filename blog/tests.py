@@ -121,7 +121,6 @@ class TestView(TestCase) :
     def test_category_page(self):
         response = self.client.get(self.category_programming.get_absolute_url())
         self.assertEqual(response.status_code, 200)
-        soup = BeautifulSoup(response.content, 'html.parser')
 
         self.navbar_test(soup)
         self.category_card_test(soup)
