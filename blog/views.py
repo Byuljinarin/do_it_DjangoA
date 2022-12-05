@@ -15,8 +15,6 @@ class PostList(ListView) :
         context['no_category_post_count'] = Post.objects.filter(category=None).count()
         return context
 
-    # template_name = 'blog/post_list.html'
-
 def category_page(request, slug):
     if slug == 'no_category':
         category = '미분류'
@@ -96,7 +94,7 @@ class PostCreate(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['title', 'hook_text', 'content', 'head_image', 'file_upload', 'category']
+    fields = ['title', 'hook_text', 'content', 'head_image', 'file_upload', 'category', 'tags']
 
     template_name = 'blog/post_update_form.html'
 
