@@ -52,7 +52,7 @@ class TestView(TestCase) :
         self.assertIn('Blog', navbar.text)
         self.assertIn('About Me', navbar.text)
 
-        logo_btn = navbar.find('a', text='Do it Django')
+        logo_btn = navbar.find('a', text="양선웅's Blog")
         self.assertEqual(logo_btn.attrs['href'], '/')
 
         home_btn = navbar.find('a', text='Home')
@@ -66,7 +66,7 @@ class TestView(TestCase) :
 
     def category_card_test(self, soup) :
         categories_card = soup.find('div', id='categories-card')
-        self.assertIn('Categories', categories_card.text)
+        self.assertIn('목록', categories_card.text)
         self.assertIn(f'{self.category_programming.name} ({self.category_programming.post_set.count()})', categories_card.text)
         self.assertIn(f'{self.category_music.name} ({self.category_music.post_set.count()})', categories_card.text)
         self.assertIn(f'미분류 (1)', categories_card.text)
@@ -273,7 +273,7 @@ class TestView(TestCase) :
         soup = BeautifulSoup(response.content, 'html.parser')
 
         comment_area = soup.find('div', id='comment-area')
-        self.assertIn('Log in and leave a comment', comment_area.text)
+        self.assertIn('댓글 작성을 위해 로그인 해주세요.', comment_area.text)
         self.assertFalse(comment_area.find('form', id='comment-form'))
 
         self.client.login(username='obama', password='somepassword')
@@ -333,7 +333,7 @@ class TestView(TestCase) :
         comment_area = soup.find('div', id='comment-area')
         self.assertFalse(comment_area.find('a', id='comment-2-update-btn'))
         comment_001_update_btn = comment_area.find('a', id='comment-1-update-btn')
-        self.assertIn('edit', comment_001_update_btn.text)
+        self.assertIn('수정', comment_001_update_btn.text)
         self.assertEqual(comment_001_update_btn.attrs['href'], '/blog/update_comment/1/')
 
         response = self.client.get('/blog/update_comment/1/')
@@ -389,7 +389,7 @@ class TestView(TestCase) :
         comment_002_delete_modal_btn = comment_area.find(
             'a', id='comment-2-delete-modal-btn'
         )
-        self.assertIn('delete', comment_002_delete_modal_btn.text)
+        self.assertIn('삭제', comment_002_delete_modal_btn.text)
         self.assertEqual(
             comment_002_delete_modal_btn.attrs['data-target'],
             '#deleteCommentModal-2'
