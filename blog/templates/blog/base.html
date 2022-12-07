@@ -7,7 +7,7 @@
     media="screen">
     <script src="https://kit.fontawesome.com/1d76ac73d5.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body style="background-color: #DEDFE0;">
 
     {% include 'blog/navbar.html' %}
 
@@ -22,17 +22,17 @@
         <div class="col-md-4 col-lg-3">
           <!-- Search widget-->
           <div class="card mb-4">
-              <div class="card-header">Search</div>
+              <div class="card-header">찾기</div>
               <div class="card-body">
                   <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Enter search term..." id="search-input">
-                      <button class="btn btn-secondary" type="button" onclick="searchPost();">Go!</button>
+                      <input type="text" class="form-control" placeholder="검색" id="search-input">
+                      <button class="btn btn-secondary" type="button" onclick="searchPost();">찾기</button>
                   </div>
               </div>
           </div>
           <!-- Categories widget-->
           <div class="card mb-4" id="categories-card">
-              <div class="card-header">Categories</div>
+              <div class="card-header">목록</div>
               <div class="card-body">
                   <div class="row">
                       <ul>

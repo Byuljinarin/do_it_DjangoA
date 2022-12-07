@@ -4,7 +4,7 @@
 
     {% if user.is_authenticated %}
         {% if user.is_superuser or user.is_staff %}
-            <a class="btn btn-info btn-sm float-right" href="/blog/create_post/" role="button"><i class="fas fa-pen"></i>&nbsp;&nbsp;New Post</a>
+            <a class="btn btn-info btn-sm float-right" href="/blog/create_post/" role="button"><i class="fas fa-pen"></i>&nbsp;&nbsp;포스트 작성하기</a>
         {% endif %}
     {% endif %}
 
@@ -42,7 +42,7 @@
             <br/>
             <br/>
           {% endif %}
-          <a class="btn btn-primary" href="{{ p.get_absolute_url }}">Read more →</a>
+          <a class="btn btn-primary" href="{{ p.get_absolute_url }}">자세히 보기 →</a>
         </div>
     </div>
     {% endfor %}
@@ -52,25 +52,27 @@
     {% if is_paginated %}
     <!-- Pagination -->
     <ul class="pagination justify-content-center my-4">
-        {% if page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}">&larr; Older</a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <a class="page-link" href="#">&larr; Older</a>
-            </li>
-        {% endif %}
-
         {% if page_obj.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Newer &rarr;</a>
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&larr; 최신 포스트</a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
+            <a class="page-link" href="#">&larr; 최신 포스트</a>
         </li>
         {% endif %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">예전 포스트 &rarr;</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#">예전 포스트 &rarr;</a>
+            </li>
+        {% endif %}
+
+
   </ul>
   {% endif %}
 {% endblock %}

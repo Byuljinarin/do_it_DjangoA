@@ -1,19 +1,101 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>양선웅 입니다.</title>
-</head>
-<body>
-<nav>
-  <a href="/blog/">Blog</a>
-  <a href="/about_me/">About me</a>
-</nav>
+    <title>양선웅's 자기소개서</title>
 
-<h1>안녕하세요. 양선웅입니다.</h1>
-<h2>이력</h2>
-<h2>Portfolio</h2>
-<h3>아직 작성중입니다.</h3>
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+
+    <script src="https://kit.fontawesome.com/1d76ac73d5.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #DEDFE0;">
+
+{% include 'blog/navbar.html' %}
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>안녕하세요 양선웅 입니다.</h1>
+                <br />
+                <p class="lead">
+                    MBTI는 INFJ</span> 입니다.<br />
+                    현재 세종에 거주하고 있습니다 <br />
+                    책을 매우 좋아 하며 좋아하는 장르는 가리지 않습니다.
+                </p>
+
+                <ul>
+                    <li>아르바이트 및 취업 경험</li>
+                    <ul>
+                        <li>편의점 아르바이트 2년</li>
+                        <li>선화동 카페 아르바이트 8개월</li>
+                        <li>한남대학교 학제신학대학원 근로학생 1년</li>
+                        <li>한남볼링장 1년</li>
+                        <li>SK Telesys 중계기 유지 보수 1년</li>
+                        <li>창전사 자재부 사원 1년</li>
+                        <li>국립세종도서관 국외 정부간행물 MARK작업 4개월</li>
+                        <li>대전광역시 육아종합지원센터 3개월</li>
+                        <li>국립세종도서관 CS업무 3개월</li>
+                        <li><span class="font-weight-bolder">etc..</span></li>
+                    </ul>
+                    <hr/>
+                    <li>감명 깊게 읽은 도서 목록</li>
+                    <ul>
+                        <li><span class="font-italic">죽은 여왕을 위한 파반느</span> - <span class="font-weight-bolder">박민규</span></li>
+                        <li><span class="font-italic">바이센테니얼 맨</span> - <span class="font-weight-bolder">아이작 아시모프</span></li>
+                        <li><span class="font-italic">당신 인생의 이야기</span> - <span class="font-weight-bolder">테드 창</span></li>
+                        <li><span class="font-italic">2021 제 44회 이상문학상 수상작 마음의 부력</span> - <span class="font-weight-bolder">문학사상</span></li>
+                        <li><span class="font-italic">마의 산</span> - <span class="font-weight-bolder">토마스 만</span></li>
+                        <li><span class="font-italic">바람과 함께 사라지다 50주년 후속작 스칼렛</span> - <span class="font-weight-bolder">알렉산드라 리플리</span></li>
+                        <li><span class="font-italic">이기적 유전자</span> - <span class="font-weight-bolder">리처드 도킨스</span></li>
+                        <li><span class="font-italic">건축무한육면각체</span> - <span class="font-weight-bolder">이상</span></li>
+                        <li><span class="font-weight-bolder">etc..</span></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="{% static 'single_pages/images/happyman1.jpg' %}">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>각종 달성 및 수상 목록</h1>
+                    <div class="col-lg-8">
+                        <br/>
+                        <ul>
+                            <li>초등학교 3, 4, 5, 6학년 다독왕 수상</li>
+                            <li>초등학교 개근상 수상</li>
+                            <li>중학교 1, 2, 3학년 다독왕 수상</li>
+                            <li>중학교 개근상 수상</li>
+                            <li>중학교 장려 장학금 수령</li>
+                            <li>고등학교 1, 2학년 다독왕 수상</li>
+                            <li>고등학교 1학년 서기 역임</li>
+                            <li>대학교 학생 장려 장학금 수령</li>
+                            <li>대학교 3학년 과대 역임</li>
+                            <li>1종 보통 운전 자격증 보유</li>
+                            <li>제 2급 정사서 자격증 보유</li>
+                            <li>17사단 사단장 표창장(시계, 훈장, 문화상품권, 휴가증 수령)</li>
+                            <li>해외여행 일본, 베트남 방문</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 
 </body>
 </html>
